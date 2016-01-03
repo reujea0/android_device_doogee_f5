@@ -10,6 +10,6 @@ $(call inherit-product, device/doogee/x5607_dg_a32/device_x5607_dg_a32.mk)
 ## Device identifier. This must come after all inclusions
 PRODUCT_DEVICE := x5607_dg_a32
 PRODUCT_NAME := cm_F5
-PRODUCT_BRAND := Doogee
+PRODUCT_BRAND := DOOGEE
 PRODUCT_MODEL := F5
 PRODUCT_MANUFACTURER := Doogee
