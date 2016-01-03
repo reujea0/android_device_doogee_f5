@@ -1,2 +1,2 @@
-# android_device_doogee_x5607_dg_a32
+# android_device_doogee_f5
 Doogee F5 CyanogenMod development repository

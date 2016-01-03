@@ -1,7 +1,7 @@
 USE_CAMERA_STUB := true
 
 # inherit from the proprietary version
--include vendor/doogee/x5607_dg_a32/BoardConfigVendor.mk
+-include vendor/doogee/f5/BoardConfigVendor.mk
 
 #64 bit
 TARGET_ARCH := arm64
@@ -44,9 +44,11 @@ BOARD_CACHEIMAGE_PARTITION_SIZE := 0x0000000019000000
 BOARD_FLASH_BLOCK_SIZE := 131072
 BOARD_MKBOOTIMG_ARGS := --kernel_offset 0xF2080100 --ramdisk_offset 0xF6000100 --second_offset 0xF2F00100 --tags_offset 0x00000100
 
-TARGET_PREBUILT_KERNEL := device/doogee/x5607_dg_a32/kernel
-TARGET_RECOVERY_FSTAB := device/doogee/x5607_dg_a32/fstab.mt6735
+TARGET_PREBUILT_KERNEL := device/doogee/f5/kernel
+TARGET_RECOVERY_FSTAB := device/doogee/f5/fstab.mt6735
 
+# Recovery
+RECOVERY_FSTAB_VERSION := 2
 BOARD_HAS_NO_SELECT_BUTTON := true
 
 #Mediatek flags
