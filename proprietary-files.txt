@@ -8,18 +8,12 @@ lib/libbluetoothem_mtk.so
 lib/libbluetoothdrv.so
 lib64/libbluetoothdrv.so
 bin/mtkbt
-app/MtkBt/arm64/MtkBt.odex
 app/MtkBt/arm/MtkBt.odex
 
 #Audio over Bluetooth
 vendor/lib/hw/audio.a2dp.blueangel.so
 
 #Camera
-vendor/pittpatt/models/recognition/face.face.y0-y0-71-N-tree_7-wmd.bin
-vendor/pittpatt/models/detection/multi_pose_face_landmark_detectors.8/landmark_group_meta_data.bin
-vendor/pittpatt/models/detection/multi_pose_face_landmark_detectors.8/left_eye-y0-yi45-p0-pi45-r0-ri20.lg_32-tree7-wmd.bin
-vendor/pittpatt/models/detection/multi_pose_face_landmark_detectors.8/nose_base-y0-yi45-p0-pi45-r0-ri20.lg_32-tree7-wmd.bin
-vendor/pittpatt/models/detection/multi_pose_face_landmark_detectors.8/left_eye-y0-yi45-p0-pi45-r0-ri20.lg_32-tree7-wmd.bin
 lib/libcamera_client_mtk.so
 lib64/libcamera_client_mtk.so
 lib64/hw/camera.mt6753.so
@@ -168,11 +162,11 @@ bin/uiautomator
 bin/wifi2agps
 bin/wmt_loader
 bin/xlog
-bin/test/fpsvcd/auto_test.sh
-bin/test/fpsvcd/fpsvcd_c
-bin/test/fpsvcd/fpsvcd_s
-bin/test/slcryption/sl_sec_encode
-bin/test/slversion/slver
+bin/test64/fpsvcd/auto_test.sh
+bin/test64/fpsvcd/fpsvcd_c
+bin/test64/fpsvcd/fpsvcd_s
+bin/test64/slcryption/sl_sec_encode
+bin/test64/slversion/slver
 bin/guiext-server
 bin/MtkCodecService
 bin/AcdApiDaemon
@@ -301,7 +295,6 @@ lib64/libEGL.so
 lib64/libGLES_trace.so
 lib64/libGLESv1_CM.so
 lib64/libGLESv2.so
-lib64/libGLESv3.so
 lib64/libgralloc_extra.so
 
 #generated 32 bit
@@ -311,6 +304,10 @@ lib/libnvram_platform.so
 lib/libnvram_sec.so
 lib/libnvram.so
 lib/libgralloc_extra.so
+lib/libEGL.so
+lib/libGLES_trace.so
+lib/libGLESv1_CM.so
+lib/libGLESv2.so
 
 lib/libion.so
 lib64/libion.so
