@@ -51,12 +51,12 @@ PRODUCT_COPY_FILES += \
 $(call inherit-product, build/target/product/full.mk)
 
 PRODUCT_BUILD_PROP_OVERRIDES += BUILD_UTC_DATE=0
-ADDITIONAL_DEFAULT_PROPERTIES += ro.adb.secure=1 \
-persist.sys.usb.config=mtp \
+ADDITIONAL_DEFAULT_PROPERTIES += ro.adb.secure=0 \
+persist.sys.usb.config=mtp,adb \
 persist.service.acm.enable=0 \
-ro.secure=1 \
+ro.secure=0 \
 ro.allow.mock.location=0 \
-ro.debuggable=0 \
+ro.debuggable=1 \
 ro.zygote=zygote64_32 \
 ro.mount.fs=EXT4 \
 camera.disable_zsl_mode=1 \
