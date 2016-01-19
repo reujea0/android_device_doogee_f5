@@ -60,6 +60,9 @@ ro.kernel.zio=38,108,105,16
 #ro.kernel.qemu.gles=0
 #ro.boot.selinux=disable
 
+# Disable SELinux for now
+ro.boot.selinux=0
+
 # Disable dirty region for Mali
 debug.hwui.render_dirty_regions=false
 
