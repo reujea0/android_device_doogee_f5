@@ -18,6 +18,7 @@ PRODUCT_COPY_FILES += \
 # initrc
 PRODUCT_COPY_FILES += \
     device/doogee/f5/fstab.mt6735:root/fstab.mt6735 \
+    device/doogee/f5/root/init.rc:root/init.rc \
     device/doogee/f5/root/init.mt6735.rc:root/init.mt6735.rc \
 	device/doogee/f5/root/init.ssd_nomuser.rc:root/init.ssd_nomuser.rc \
 	device/doogee/f5/root/init.xlog.rc:root/init.xlog.rc \
