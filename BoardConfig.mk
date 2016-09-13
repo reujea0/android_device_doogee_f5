@@ -24,7 +24,7 @@ TARGET_RECOVERY_FSTAB := device/doogee/f5/fstab.mt6735
 BOARD_EGL_CFG := device/doogee/f5/configs/egl.cfg
 
 # system.prop
-TARGET_SYSTEM_PROP := device/elephone/p8000/system.prop
+TARGET_SYSTEM_PROP := device/doogee/f5/system.prop
 
 # Recovery
 RECOVERY_FSTAB_VERSION := 2
