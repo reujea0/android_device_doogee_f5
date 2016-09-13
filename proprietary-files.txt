@@ -189,7 +189,6 @@ lib/hw/audio.primary.mt6753.so
 #lib/hw/bluetooth.default.so
 lib/hw/camera.mt6753.so
 lib/hw/gps.default.so
-lib/hw/gralloc.default.so
 lib/hw/gralloc.mt6753.so
 lib/hw/hwcomposer.mt6753.so
 lib/hw/keystore.default.so

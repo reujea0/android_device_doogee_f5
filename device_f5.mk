@@ -34,9 +34,9 @@ PRODUCT_COPY_FILES += \
 	device/doogee/f5/root/factory_init.project.rc:root/factory_init.project.rc
 	
 	# TODO: Add correct permissions
-PRODUCT_COPY_FILES += \
-	frameworks/native/data/etc/android.software.app_widgets.xml:system/etc/permissions/android.software.app_widgets.xml \
-	frameworks/native/data/etc/android.hardware.audio.output.xml:system/etc/permissions/android.hardware.audio.output.xml
+#PRODUCT_COPY_FILES += \
+#	frameworks/native/data/etc/android.software.app_widgets.xml:system/etc/permissions/android.software.app_widgets.xml \
+#	frameworks/native/data/etc/android.hardware.audio.output.xml:system/etc/permissions/android.hardware.audio.output.xml
 
 $(call inherit-product, build/target/product/full.mk)
 
