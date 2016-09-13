@@ -115,6 +115,7 @@ lib/libaudiomtkdcremoval.so
 lib/libaudiosetting.so
 lib/libwebrtc_audio_preprocessing.so
 lib64/hw/audio.primary.mt6753.so
+lib/libtinyalsa.so
 lib64/libaed.so
 lib/libaed.so
 

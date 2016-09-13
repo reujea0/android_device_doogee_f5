@@ -1,7 +1,5 @@
 $(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
-
-# The gps config appropriate for this device
-$(call inherit-product, device/common/gps/gps_us_supl.mk)
+$(call inherit-product, device/mediatek/mt6753_common/device_mt6753.mk)
 
 $(call inherit-product-if-exists, vendor/doogee/f5/f5-vendor.mk)
 
@@ -38,15 +36,7 @@ PRODUCT_COPY_FILES += \
 	# TODO: Add correct permissions
 PRODUCT_COPY_FILES += \
 	frameworks/native/data/etc/android.software.app_widgets.xml:system/etc/permissions/android.software.app_widgets.xml \
-	frameworks/native/data/etc/android.hardware.audio.output.xml:system/etc/permissions/android.hardware.audio.output.xml \
-	frameworks/native/data/etc/android.hardware.bluetooth.xml:system/etc/permissions/android.hardware.bluetooth.xml \
-	frameworks/native/data/etc/android.hardware.sensor.proximity.xml:system/etc/permissions/android.hardware.sensor.proximity.xml \
-	frameworks/native/data/etc/android.hardware.sensor.light.xml:system/etc/permissions/android.hardware.sensor.light.xml \
-	frameworks/native/data/etc/android.hardware.wifi.xml:system/etc/permissions/android.hardware.wifi.xml \
-	frameworks/native/data/etc/android.hardware.location.gps.xml:system/etc/permissions/android.hardware.location.gps.xml \
-	frameworks/native/data/etc/android.hardware.location.xml:system/etc/permissions/android.hardware.location.xml \
-	frameworks/native/data/etc/android.hardware.telephony.gsm.xml:system/etc/permissions/android.hardware.telephony.gsm.xml \
-	frameworks/native/data/etc/android.hardware.touchscreen.multitouch.xml:system/etc/permissions/android.hardware.touchscreen.multitouch.xml
+	frameworks/native/data/etc/android.hardware.audio.output.xml:system/etc/permissions/android.hardware.audio.output.xml
 
 $(call inherit-product, build/target/product/full.mk)
 
