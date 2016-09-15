@@ -1,5 +1,5 @@
-$(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
 $(call inherit-product, device/mediatek/mt6753_common/device_mt6753.mk)
+$(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
 
 $(call inherit-product-if-exists, vendor/doogee/f5/f5-vendor.mk)
 
@@ -41,7 +41,7 @@ PRODUCT_COPY_FILES += \
 
 $(call inherit-product, build/target/product/full.mk)
 
-PRODUCT_BUILD_PROP_OVERRIDES += BUILD_UTC_DATE=0
+#PRODUCT_BUILD_PROP_OVERRIDES += BUILD_UTC_DATE=0
 ADDITIONAL_DEFAULT_PROPERTIES += ro.adb.secure=0 \
 persist.sys.usb.config=mtp,adb \
 persist.service.acm.enable=0 \
@@ -57,6 +57,3 @@ dalvik.vm.dex2oat-Xmx=512m \
 dalvik.vm.image-dex2oat-Xms=64m \
 dalvik.vm.image-dex2oat-Xmx=64m \
 ro.dalvik.vm.native.bridge=0
-
-PRODUCT_NAME := full_f5
-PRODUCT_DEVICE := f5
