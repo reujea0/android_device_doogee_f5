@@ -5,6 +5,9 @@ $(call inherit-product-if-exists, vendor/doogee/f5/f5-vendor.mk)
 
 DEVICE_PACKAGE_OVERLAYS += device/doogee/f5/overlay
 
+# Recovery allowed devices
+TARGET_OTA_ASSERT_DEVICE := f5,x5607_dg_a32
+
 
 ifeq ($(TARGET_PREBUILT_KERNEL),)
 	LOCAL_KERNEL := device/doogee/f5/kernel
@@ -15,7 +18,7 @@ endif
 PRODUCT_COPY_FILES += \
     $(LOCAL_KERNEL):kernel
     
-# initrc
+# initrc's
 PRODUCT_COPY_FILES += \
     device/doogee/f5/fstab.mt6735:root/fstab.mt6735 \
     device/doogee/f5/root/init.rc:root/init.rc \
@@ -38,6 +41,9 @@ PRODUCT_COPY_FILES += \
 #PRODUCT_COPY_FILES += \
 #	frameworks/native/data/etc/android.software.app_widgets.xml:system/etc/permissions/android.software.app_widgets.xml \
 #	frameworks/native/data/etc/android.hardware.audio.output.xml:system/etc/permissions/android.hardware.audio.output.xml
+
+PRODUCT_COPY_FILES += \
+    	device/doogee/f5/root/etc/hostapd_default.conf:system/etc/hostapd/hostapd_default.conf
 
 $(call inherit-product, build/target/product/full.mk)
 
