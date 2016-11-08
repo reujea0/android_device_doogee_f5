@@ -23,7 +23,8 @@ PRODUCT_COPY_FILES += \
     device/doogee/f5/fstab.mt6735:root/fstab.mt6735 \
     device/doogee/f5/root/init.rc:root/init.rc \
     device/doogee/f5/root/init.mt6735.rc:root/init.mt6735.rc \
-	device/doogee/f5/root/init.ssd_nomuser.rc:root/init.ssd_nomuser.rc \
+	device/doogee/f5/root/init.ssd.rc:root/init.ssd.rc \
+	device/doogee/f5/root/init.storage.rc:root/init.storage.rc \
 	device/doogee/f5/root/init.xlog.rc:root/init.xlog.rc \
 	device/doogee/f5/root/init.mt6735.usb.rc:root/init.mt6735.usb.rc \
 	device/doogee/f5/root/init.recovery.mt6735.rc:root/init.recovery.mt6735.rc \

@@ -11,6 +11,8 @@ import /init.${ro.zygote}.rc
 import /init.trace.rc
 # Include CM's extra init file
 import /init.cm.rc
+import /init.hermes.power.rc
+import /init.storage.rc
 
 on early-init
     # Set init and its forked children's oom_adj.
@@ -156,6 +158,43 @@ loglevel 6 ####
 
 	# ion device
 	chmod 0666 /dev/ion
+
+	chmod 0660 /sys/bus/platform/drivers/gsensor/cpsdata 
+	chmod 0660 /sys/bus/platform/drivers/gsensor/cpsrange 
+	chmod 0660 /sys/bus/platform/drivers/gsensor/cpsbandwidth 
+	chmod 0660 /sys/bus/platform/drivers/gsensor/cpsopmode 
+	chmod 0660 /sys/bus/platform/drivers/gsensor/fifo_mode 
+	chmod 0660 /sys/bus/platform/drivers/gsensor/fifo_data_frame 
+	chmod 0660 /sys/bus/platform/drivers/gsensor/fifo_framecount 
+	chown system system /sys/bus/platform/drivers/gsensor/cpsdata 
+	chown system system /sys/bus/platform/drivers/gsensor/cpsrange 
+	chown system system /sys/bus/platform/drivers/gsensor/cpsbandwidth 
+	chown system system /sys/bus/platform/drivers/gsensor/cpsopmode 
+	chown system system /sys/bus/platform/drivers/gsensor/fifo_mode 
+	chown system system /sys/bus/platform/drivers/gsensor/fifo_data_frame 
+	chown system system /sys/bus/platform/drivers/gsensor/fifo_framecount 
+	#add for mag 
+	chmod 0660 /sys/bus/platform/drivers/msensor/rawdata 
+	chown system system /sys/bus/platform/drivers/msensor/rawdata 
+
+	chmod 0660 /sys/bus/platform/drivers/msensor/daemon
+	chown system system /sys/bus/platform/drivers/msensor/daemon
+
+	#add for gyro 
+	chmod 0660 /sys/bus/platform/drivers/gyroscope/rawdata 
+	chmod 0660 /sys/bus/platform/drivers/gyroscope/datarate 
+	chmod 0660 /sys/bus/platform/drivers/gyroscope/range 
+	chmod 0660 /sys/bus/platform/drivers/gyroscope/powermode 
+	chmod 0660 /sys/bus/platform/drivers/gyroscope/fifo_mode 
+	chmod 0660 /sys/bus/platform/drivers/gyroscope/fifo_data_frame 
+	chmod 0660 /sys/bus/platform/drivers/gyroscope/fifo_framecount 
+	chown system system /sys/bus/platform/drivers/gyroscope/rawdata 
+	chown system system /sys/bus/platform/drivers/gyroscope/datarate 
+	chown system system /sys/bus/platform/drivers/gyroscope/range 
+	chown system system /sys/bus/platform/drivers/gyroscope/powermode 
+	chown system system /sys/bus/platform/drivers/gyroscope/fifo_mode 
+	chown system system /sys/bus/platform/drivers/gyroscope/fifo_data_frame
+	chown system system /sys/bus/platform/drivers/gyroscope/fifo_framecount
 
 # Healthd can trigger a full boot from charger mode by signaling this
 # property when the power button is held.
@@ -326,6 +365,9 @@ on post-fs-data
 
     # Set SELinux security contexts on upgrade or policy update.
     restorecon_recursive /data
+    restorecon /data/data
+    restorecon /data/user
+    restorecon /data/user/0
 
     # If there is no fs-post-data action in the init.<device>.rc file, you
     # must uncomment this line, otherwise encrypted filesystems
@@ -616,6 +658,11 @@ service flash_recovery /system/bin/install-recovery.sh
     class main
     seclabel u:r:install_recovery:s0
     oneshot
+    disabled
+
+# update recovery if enabled
+on property:persist.sys.recovery_update=true
+    start flash_recovery
 
 service racoon /system/bin/racoon
     class main

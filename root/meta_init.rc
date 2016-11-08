@@ -28,6 +28,8 @@ on early-init
     start ueventd
 
 # create mountpoints
+    mkdir /protect_f 0771 system system
+    mkdir /protect_s 0771 system system
     mkdir /mnt 0775 root system
 
 on init
@@ -156,6 +158,11 @@ on fs
     write /proc/bootprof "INIT:Mount_END"
 
 on post-fs
+    chown system system /protect_f
+    chmod 0770 /protect_f
+
+    chown system system /protect_s
+    chmod 0770 /protect_s
     # once everything is setup, no need to modify /
     mount rootfs rootfs / ro remount
 
@@ -191,7 +198,7 @@ on post-fs-data
     chmod 0771 /persist
 
     # create basic filesystem structure
-    #mkdir /data/nvram 2770 root system
+    mkdir /data/nvram 2770 root system
 	# We chown/chmod /nvdata again so because mount is run as root + defaults
     chown root system /nvdata
     chmod 2770 /nvdata

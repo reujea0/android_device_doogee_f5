@@ -72,7 +72,7 @@ on fs
     exec /system/bin/chown root:system /dev/block/platform/mtk-msdc.0/by-name/proinfo
     exec /system/bin/chmod 0660 /dev/block/platform/mtk-msdc.0/by-name/otp
     exec /system/bin/chown root:system /dev/block/platform/mtk-msdc.0/by-name/otp
-    exec /system/bin/chmod 0660 /dev/block/platform/mtk-msdc.0/by-name/nvram
+    exec /system/bin/chmod 0777 /dev/block/platform/mtk-msdc.0/by-name/nvram
     exec /system/bin/chown root:system /dev/block/platform/mtk-msdc.0/by-name/nvram
     exec /system/bin/chmod 0660 /dev/block/platform/mtk-msdc.0/by-name/para
     exec /system/bin/chown root:system /dev/block/platform/mtk-msdc.0/by-name/para
@@ -124,7 +124,7 @@ on post-fs-data
     # mkdir /data/nvram 2770 root system
     # We chown/chmod /nvdata again so because mount is run as root + defaults
     chown root system /nvdata
-    chmod 2770 /nvdata
+    chmod 2777 /nvdata
     symlink /nvdata /data/nvram
 
     # Set SELinux security contexts on upgrade or policy update.
@@ -582,7 +582,7 @@ on post-fs-data
     chmod 0640 /mtd@recovery
     chown root system /mtd@recovery
 
-    chmod 0660 /mtd@nvram
+    chmod 0777 /mtd@nvram
     chown root system /mtd@nvram
 
     chmod 0660 /mtd@seccfg

@@ -23,7 +23,16 @@ on early-init
 
     write /proc/bootprof "INIT: usr/eng build setting"
 # create mountpoints
+    mkdir /protect_f 0771 system system
+    mkdir /protect_s 0771 system system
     mkdir /mnt 0775 root system
+    mkdir /storage 0055 system sdcard_r
+    mkdir /storage/sdcard0 0000 system system
+    mkdir /storage/sdcard1 0000 system system
+    # for backwards compatibility
+    symlink /storage/sdcard0 /sdcard
+    symlink /storage/sdcard0 /mnt/sdcard
+    symlink /storage/sdcard1 /mnt/sdcard2
 
 on init
 
@@ -160,7 +169,9 @@ on post-fs
     # Same reason as /data above
     chown system cache /cache
     chmod 0770 /cache
-
+    # We restorecon /cache in case the cache partition has been reset.
+    restorecon_recursive /cache
+    
     mkdir /cache/recovery 0770 system system
     chown system system /protect_f
     chmod 0770 /protect_f
