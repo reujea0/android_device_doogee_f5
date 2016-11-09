@@ -38,7 +38,5 @@ BOARD_HAS_NO_SELECT_BUTTON := true
 
 USE_OPENGL_RENDERER := true
 
-PRODUCT_PREBUILT_WEBVIEWCHROMIUM := yes
-
 # Hack for building without kernel sources
 $(shell mkdir -p $(OUT)/obj/KERNEL_OBJ/usr)
