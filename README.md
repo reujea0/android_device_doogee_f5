@@ -1,7 +1,10 @@
 # android_device_doogee_f5
-Doogee F5 CyanogenMod device tree development repository
+Doogee F5 CyanogenMod device tree repository
 
 Currently
-* Recovery is buildable and works
+* Everything works, except for the fingerprint sensor
 
-To build, either use the provided vendor repository, or after blob extraction remove libtinycompress from the makefile, then copy it manually to $OUT/system/lib\[64\] (Respect the architectures!) before starting the build, or else it will fail.
+Bugs
+* Internal storage is mounted as a subdirectory named 0 on the actual storage
+
+Requires the [MT6735 Common Repository](https://github.com/visi0nary/android_device_mt6753_common) to build.
