@@ -8,7 +8,7 @@ TARGET_IS_MT6753 := true
 $(call inherit-product, vendor/cm/config/common_full_phone.mk)
 
 # Inherit device configuration
-$(call inherit-product, device/doogee/f5/device_f5.mk)
+$(call inherit-product, device/doogee/f5/f5.mk)
 
 # Include generic Mediatek MT6753 part
 $(call inherit-product, device/mediatek/mt6753_common/BoardConfigMT6753_common.mk)
