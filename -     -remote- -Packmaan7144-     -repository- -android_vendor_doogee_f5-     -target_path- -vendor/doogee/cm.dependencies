@@ -1,8 +1,0 @@
-[
-  {
-    "remote": "Packmaan7144",
-    "repository": "android_vendor_doogee_f5",
-    "target_path": "vendor/doogee/f5",
-    "branch": "master"
-  }
-]
