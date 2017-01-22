@@ -19,6 +19,6 @@ TARGET_SCREEN_WIDTH := 1080
 ## Device identifier. This must come after all inclusions
 PRODUCT_DEVICE := f5
 PRODUCT_NAME := cm_f5
-PRODUCT_BRAND := DOOGEE
+PRODUCT_BRAND := doogee
 PRODUCT_MODEL := F5
-PRODUCT_MANUFACTURER := Doogee
+PRODUCT_MANUFACTURER := doogee
